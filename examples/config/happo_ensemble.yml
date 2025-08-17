@@ -1,0 +1,35 @@
+env:
+  scenario: 'PommeFFACompetition-v0'
+
+policy:
+  happo_ensemble:
+    ensemble_size: 3
+    hidden_sizes: [128, 128]
+    lr: 0.0008079593404963352
+    gamma: 0.9911949466750913
+    clip_ratio: 0.21645716909099877
+    value_coef: 1.0
+    entropy_coef: 0.0019449703718123566
+    update_epochs: 10
+    batch_size: 256
+    tau: 0.05036985810021166
+
+trainer:
+  steps_per_epoch: 4096
+  epochs: 1250
+  log_dir: 'logs/happo_ensemble_pommerman'
+  save_dir: 'models/happo_ensemble_pommerman'
+  save_name: 'happo_ensemble_agent.pt'
+  save_freq: 20
+
+llm_assistance:
+  enabled: true # Set to true to enable the LLM
+  model_name: "meta-llama/Llama-3.2-1B-Instruct"
+  lambda: 0.1
+  call_strategy: 'on_steps' # Options: 'on_steps', 'on_uncertainty'
+  call_freq_steps: 4096
+  uncertainty_threshold: 1.5 
+
+evaluation:
+  model_path: 'models/happo_ensemble_pommerman/happo_ensemble_agent.pt'
+  num_episodes: 75
