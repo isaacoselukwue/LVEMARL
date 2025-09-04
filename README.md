@@ -6,6 +6,16 @@ Python version: 3.12
 
 ## Running the Code
 
+Before you run, you need to install the required dependencies. You can do this by running:
+
+```bash
+pip install -r requirements.txt
+pip install PyYAML orjson gymnasium opencv-python tensorflow pettingzoo pygame pymunk optuna pandas transformers torch accelerate bitsandbytes 
+apt update && apt install -y libgl1 libfreetype6-dev libfontconfig1-dev
+pip install --upgrade huggingface_hub
+hf auth login --token <your_huggingface_token>
+```
+
 ### Baseline policies:
 
 To run the baseline policies, you can use the following command:
