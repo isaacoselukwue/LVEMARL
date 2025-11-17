@@ -1,0 +1,21 @@
+env:
+  scenario: PommeFFACompetition-v0
+policy:
+  ppo:
+    batch_size: 256
+    clip_ratio: 0.1853136868268676
+    entropy_coef: 0.00242905825516879
+    gamma: 0.9897851907283214
+    hidden_sizes:
+    - 128
+    lr: 0.0004954362869529345
+    update_epochs: 8
+    value_coef: 0.5971916276810588
+trainer:
+  epochs: 30
+  eval_freq: 100
+  log_dir: logs/optuna_ppo
+  save_dir: models/optuna_ppo
+  save_freq: 100
+  save_name: tuned_ppo_agent.pt
+  steps_per_epoch: 2048
