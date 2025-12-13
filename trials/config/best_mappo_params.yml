@@ -1,0 +1,21 @@
+env:
+  scenario: PommeFFACompetition-v0
+evaluation:
+  num_episodes: 50
+policy:
+  mappo:
+    batch_size: 256
+    clip_ratio: 0.2643391118026585
+    entropy_coef: 0.04868747005326737
+    gamma: 0.9909760802637948
+    hidden_sizes:
+    - 256
+    - 256
+    lr: 0.00020203455469535413
+    update_epochs: 16
+    value_coef: 0.4304109557020307
+trainer:
+  epochs: 30
+  log_dir: logs/optuna_trials
+  save_dir: models/optuna_trials
+  steps_per_epoch: 2048

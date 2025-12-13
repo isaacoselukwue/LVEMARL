@@ -1,0 +1,23 @@
+env:
+  scenario: PommeFFACompetition-v0
+evaluation:
+  num_episodes: 50
+policy:
+  happo_ensemble:
+    batch_size: 256
+    clip_ratio: 0.21645716909099877
+    ensemble_size: 3
+    entropy_coef: 0.0019449703718123566
+    gamma: 0.9911949466750913
+    hidden_sizes:
+    - 128
+    - 128
+    lr: 0.0008079593404963352
+    tau: 0.05036985810021166
+    update_epochs: 10
+    value_coef: 1.0
+trainer:
+  epochs: 30
+  log_dir: logs/optuna_happo_ensemble
+  save_dir: models/optuna_happo_ensemble
+  steps_per_epoch: 2048
